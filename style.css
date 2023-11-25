@@ -1,53 +1,76 @@
 /* Container styles */
 #inventory, #ship {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
+    border: 2px solid #00bfff; /* Bright blue border */
+    padding: 15px;
+    margin: 15px;
+    width: 350px;
     float: left;
+    background-color: #000; /* Dark background color */
+    color: #00bfff; /* Bright blue text color */
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Module bay and module styles */
 .module-bay, .module {
-    border: 1px solid #aaa;
-    margin: 5px;
-    padding: 10px;
+    border: 2px solid #fff; /* White border */
+    margin: 10px;
+    padding: 15px;
     text-align: center;
     cursor: pointer; /* Indicate it's draggable */
     transition: background-color 0.3s; /* Add smooth transition for background color */
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Module bay styles */
 .module-bay {
-    background-color: #f0f0f0;
+    background-color: #333; /* Dark gray background */
     min-height: 50px; /* Ensures the bay is visible even when empty */
 }
 
 /* Module styles */
 .module {
-    background-color: #ddf;
+    background-color: #00bfff; /* Bright blue background */
+    color: #000; /* Black text color */
+}
+
+/* Tier 1 style */
+.module-tier-1 {
+    background-color: #5733FF; /* You can choose your preferred color */
+    /* Add other styling as needed */
+}
+
+/* Tier 2 style */
+.module-tier-2 {
+    background-color: #33FF57; /* Another color for Tier 2 */
+    /* Add other styling as needed */
+}
+
+/* Tier 3 style */
+.module-tier-3 {
+    background-color: #FF5733; /* Another color for Tier 3 */
+    /* Add other styling as needed */
 }
 
 /* Hover effect for module bays */
 .module-bay:hover {
-    background-color: #e0e0e0;
+    background-color: #444; /* Slightly darker gray on hover */
 }
 
 /* Style for an empty module bay */
 .module-bay.empty {
-    background-color: #f8f8f8;
+    background-color: #666; /* Gray with dashed border for empty bays */
     border-style: dashed;
 }
 
 /* Style for a filled module bay */
 .module-bay.filled {
-    background-color: #e0f0e0;
+    background-color: #00ff00; /* Bright green for filled bays */
 }
 
 /* Styles for modules being dragged */
 .module:active, .module:focus {
     opacity: 0.8;
-    border-color: #888;
+    border-color: #888; /* Darker border when module is active */
 }
 
 /* Additional style for draggable modules */
@@ -57,23 +80,58 @@
 
 /* Module stats display styles */
 #module-stats {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    width: 300px;
+    border: 2px solid #00bfff; /* Bright blue border for stats display */
+    padding: 15px;
+    margin: 15px;
+    width: 350px;
     float: left;
-    background-color: #fff; /* Background color for module stats display */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+    background-color: #000; /* Dark background color for stats display */
+    color: #00bfff; /* Bright blue text color for stats display */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Heading style for module name */
 #module-stats h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+    font-size: 1.5em; /* Larger font size for module name */
+    margin-bottom: 15px;
 }
 
 /* Style for module stats text */
 #module-stats div {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial Narrow', sans-serif;
     white-space: pre-line; /* Preserve line breaks in stats text */
+    font-size: 1.1em; /* Slightly larger font size for stats text */
+}
+
+/* Ship stats display styles */
+#ship-stats {
+    border: 2px solid #00bfff; /* Bright blue border for ship stats display */
+    padding: 15px;
+    margin: 15px;
+    width: 350px;
+    float: left;
+    background-color: #000; /* Dark background color for ship stats display */
+    color: #00bfff; /* Bright blue text color for ship stats display */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Heading style for ship stats */
+#ship-stats h3 {
+    font-size: 1.5em; /* Larger font size for ship stats heading */
+    margin-bottom: 15px;
+}
+
+/* Style for ship stats list */
+#ship-stats ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+/* Style for ship stats list items */
+#ship-stats li {
+    font-family: 'Arial Narrow', sans-serif;
+    font-size: 1.1em; /* Slightly larger font size for ship stats text */
+    margin-bottom: 5px;
 }
