@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function handleDragStart(event) {
-        console.log("Drag start event called"); // Add this line
         const moduleName = event.target.textContent;
         console.log("Dragged Module: " + moduleName);
 
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     
-    
     function handleInventoryDrop(event) {
         event.preventDefault();
         const moduleName = event.dataTransfer.getData('text/plain').trim();
@@ -145,6 +143,18 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchModulesAndUpdateDisplay();
         }
     }
+
+    // Function to set up the event listeners for the module bay elements
+    function setUpModuleBayEventListeners() {
+        document.querySelectorAll('.module-bay').forEach(bay => {
+            bay.addEventListener('dragover', handleDragOver);
+            bay.addEventListener('drop', handleModuleBayDrop);
+            bay.addEventListener('dragstart', handleDragStart); // Add this line
+        });
+    }
+
+    // Call the function to set up the event listeners for the module bays
+    setUpModuleBayEventListeners(); // Add this line
 
     // Enable inventory to accept drops (unequip modules)
     inventory.addEventListener('dragover', handleDragOver);
