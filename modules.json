@@ -1,0 +1,73 @@
+[
+        {
+            "name": "Shield Generator Module",
+            "stats": {
+                "shieldStrength": 100,
+                "energyConsumption": 20
+            }
+        },
+        {
+            "name": "Engine Booster Module",
+            "stats": {
+                "speedIncrease": 15,
+                "fuelEfficiency": 10
+            }
+        },
+        {
+            "name": "Weapon Upgrade Module",
+            "stats": {
+                "damageIncrease": 25,
+                "reloadSpeed": 1.5
+            }
+        },
+        {
+            "name": "Cargo Expansion Module",
+            "stats": {
+                "additionalCapacity": 50,
+                "cargoSecurity": 10
+            }
+        },
+        {
+            "name": "Long-Range Scanner Module",
+            "stats": {
+                "scanRange": 200,
+                "scanAccuracy": 90
+            }
+        },
+        {
+            "name": "Hull Reinforcement Module",
+            "stats": {
+                "hullStrength": 120,
+                "impactResistance": 30
+            }
+        },
+        {
+            "name": "Energy Core Module",
+            "stats": {
+                "energyOutput": 100,
+                "overheatLimit": 75
+            }
+        },
+        {
+            "name": "Stealth Technology Module",
+            "stats": {
+                "stealthDuration": 60,
+                "cooldown": 120
+            }
+        },
+        {
+            "name": "Automated Repair Module",
+            "stats": {
+                "repairRate": 5,
+                "energyConsumption": 10
+            }
+        },
+        {
+            "name": "Life Support Upgrade Module",
+            "stats": {
+                "oxygenEfficiency": 80,
+                "systemRedundancy": 2
+            }
+        }
+    ]
+    

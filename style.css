@@ -1,0 +1,79 @@
+/* Container styles */
+#inventory, #ship {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    float: left;
+}
+
+/* Module bay and module styles */
+.module-bay, .module {
+    border: 1px solid #aaa;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer; /* Indicate it's draggable */
+    transition: background-color 0.3s; /* Add smooth transition for background color */
+}
+
+/* Module bay styles */
+.module-bay {
+    background-color: #f0f0f0;
+    min-height: 50px; /* Ensures the bay is visible even when empty */
+}
+
+/* Module styles */
+.module {
+    background-color: #ddf;
+}
+
+/* Hover effect for module bays */
+.module-bay:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style for an empty module bay */
+.module-bay.empty {
+    background-color: #f8f8f8;
+    border-style: dashed;
+}
+
+/* Style for a filled module bay */
+.module-bay.filled {
+    background-color: #e0f0e0;
+}
+
+/* Styles for modules being dragged */
+.module:active, .module:focus {
+    opacity: 0.8;
+    border-color: #888;
+}
+
+/* Additional style for draggable modules */
+.module.draggable {
+    cursor: grab;
+}
+
+/* Module stats display styles */
+#module-stats {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    float: left;
+    background-color: #fff; /* Background color for module stats display */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for depth */
+}
+
+/* Heading style for module name */
+#module-stats h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Style for module stats text */
+#module-stats div {
+    font-family: Arial, sans-serif;
+    white-space: pre-line; /* Preserve line breaks in stats text */
+}
