@@ -29,6 +29,8 @@ body {
 /* Layout */
 #content-area {
     background-color: var(--background-dark);
+    background-image: url('images/abstract-bg.png'); /* Replace with the actual path of your tiling image */
+    background-repeat: repeat; /* Ensures the image tiles seamlessly */
     color: var(--text-color);
     width: 100%;
     max-width: 1200px;
