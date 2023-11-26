@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Shield Generator Module",
         "stats": {
             "shieldStrength": 70,
@@ -8,6 +9,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 2,        
         "name": "Shield Generator Module",
         "stats": {
             "shieldStrength": 100,
@@ -16,6 +18,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 3,
         "name": "Shield Generator Module",
         "stats": {
             "shieldStrength": 140,
@@ -24,6 +27,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 4,
         "name": "Engine Booster Module",
         "stats": {
             "speedIncrease": 15,
@@ -32,6 +36,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 5,
         "name": "Engine Booster Module",
         "stats": {
             "speedIncrease": 25,
@@ -40,6 +45,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 6,
         "name": "Engine Booster Module",
         "stats": {
             "speedIncrease": 35,
@@ -48,6 +54,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 7,
         "name": "Weapon Upgrade Module",
         "stats": {
             "damageIncrease": 15,
@@ -56,6 +63,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 8,
         "name": "Weapon Upgrade Module",
         "stats": {
             "damageIncrease": 20,
@@ -64,6 +72,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 9,
         "name": "Weapon Upgrade Module",
         "stats": {
             "damageIncrease": 25,
@@ -72,6 +81,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 10,
         "name": "Cargo Expansion Module",
         "stats": {
             "additionalCapacity": 50,
@@ -80,6 +90,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 11,
         "name": "Cargo Expansion Module",
         "stats": {
             "additionalCapacity": 70,
@@ -88,6 +99,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 12,
         "name": "Cargo Expansion Module",
         "stats": {
             "additionalCapacity": 100,
@@ -96,6 +108,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 13,
         "name": "Long-Range Scanner Module",
         "stats": {
             "scanRange": 150,
@@ -104,6 +117,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 14,
         "name": "Long-Range Scanner Module",
         "stats": {
             "scanRange": 200,
@@ -112,6 +126,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 15,
         "name": "Long-Range Scanner Module",
         "stats": {
             "scanRange": 250,
@@ -120,6 +135,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 16,
         "name": "Hull Reinforcement Module",
         "stats": {
             "hullStrength": 80,
@@ -128,6 +144,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 17,
         "name": "Hull Reinforcement Module",
         "stats": {
             "hullStrength": 120,
@@ -136,6 +153,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 18,
         "name": "Hull Reinforcement Module",
         "stats": {
             "hullStrength": 160,
@@ -144,6 +162,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 19,
         "name": "Energy Core Module",
         "stats": {
             "energyOutput": 80,
@@ -152,6 +171,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 20,
         "name": "Energy Core Module",
         "stats": {
             "energyOutput": 100,
@@ -160,6 +180,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 21,
         "name": "Energy Core Module",
         "stats": {
             "energyOutput": 120,
@@ -168,6 +189,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 22,
         "name": "Stealth Technology Module",
         "stats": {
             "stealthDuration": 40,
@@ -176,6 +198,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 23,
         "name": "Stealth Technology Module",
         "stats": {
             "stealthDuration": 60,
@@ -184,6 +207,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 24,
         "name": "Stealth Technology Module",
         "stats": {
             "stealthDuration": 80,
@@ -192,6 +216,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 25,
         "name": "Automated Repair Module",
         "stats": {
             "repairRate": 3,
@@ -200,6 +225,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 26,
         "name": "Automated Repair Module",
         "stats": {
             "repairRate": 5,
@@ -208,6 +234,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 27,
         "name": "Automated Repair Module",
         "stats": {
             "repairRate": 8,
@@ -216,6 +243,7 @@
         "tier": "Tier 3"
     },
     {
+        "id": 28,
         "name": "Life Support Upgrade Module",
         "stats": {
             "oxygenEfficiency": 60,
@@ -224,6 +252,7 @@
         "tier": "Tier 1"
     },
     {
+        "id": 29,
         "name": "Life Support Upgrade Module",
         "stats": {
             "oxygenEfficiency": 80,
@@ -232,6 +261,7 @@
         "tier": "Tier 2"
     },
     {
+        "id": 30,
         "name": "Life Support Upgrade Module",
         "stats": {
             "oxygenEfficiency": 100,

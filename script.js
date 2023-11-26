@@ -19,34 +19,28 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchModulesAndUpdateDisplay();
 
     function updateInventoryDisplay() {
-        console.log("Updating inventory display");
-        console.log("Equipped Modules:", Array.from(equippedModules));
-
         inventory.innerHTML = ''; // Clear current inventory
-
+    
         // Create and display inventory items
         inventoryModules.forEach(moduleObj => {
-            if (!equippedModules.has(moduleObj.name)) {
-                // Determine the tier of the module (you'll need a way to do this)
-                // For example, assuming you have a 'tier' property in each module object
-                const tier = moduleObj.tier;
-        
-                // Call createModuleDiv with the tier parameter
-                let div = createModuleDiv(moduleObj.name, moduleObj.stats, tier);
+            if (!equippedModules.has(moduleObj.id)) { // Check using module ID
+                let div = createModuleDiv(moduleObj.name, moduleObj.stats, moduleObj.tier, moduleObj.id);
                 div.addEventListener('dragstart', handleDragStart);
                 inventory.appendChild(div);
             }
         });
     }
+    
 
-    function createModuleDiv(moduleName, moduleStats, tier) {
+    function createModuleDiv(moduleName, moduleStats, tier, id) {
         let div = document.createElement('div');
         div.className = 'module';
         div.textContent = moduleName;
+        div.setAttribute('data-id', id); // Correctly set the module's ID
         div.draggable = true;
     
         // Replace spaces with hyphens in the tier to create a valid class name
-        const tierClass = tier.replace(/\s+/g, '-').toLowerCase();
+        const tierClass = tier.replace(/\s+/g, '-').toLowerCase();``
         
         // Add a class based on the modified tier
         //console.log("I am adding module-tier-" + tierClass);
@@ -133,15 +127,15 @@ updateShipStats();
 
 
     function handleDragStart(event) {
-        const moduleName = event.target.textContent;
-        console.log("Dragged Module: " + moduleName);
 
-        event.dataTransfer.setData('text/plain', event.target.textContent);
+        const moduleId = event.target.getAttribute('data-id'); // Get the module's ID
+        console.log("Dragged Module ID: " + moduleId);
+    
+        event.dataTransfer.setData('text/plain', moduleId);
         event.dataTransfer.effectAllowed = 'move';
         event.dataTransfer.setData('sourceId', event.target.parentNode.id); // Source module bay or inventory
-        
-        // Set the dragged module as draggable
         event.target.setAttribute('draggable', 'true');
+
     }
     
 
@@ -152,7 +146,8 @@ updateShipStats();
 
     function handleModuleBayDrop(event) {
         event.preventDefault();
-        const moduleName = event.dataTransfer.getData('text/plain').trim();
+        const moduleId = parseInt(event.dataTransfer.getData('text/plain').trim());
+    
         let targetBay = event.target;
     
         // Ensure the drop target is the module bay itself
@@ -160,49 +155,80 @@ updateShipStats();
             targetBay = targetBay.parentNode;
         }
     
-        // If there's already a module in the bay, move it back to inventory
+        // Check if the module is already equipped in a different bay
+        const existingLocation = findModuleLocation(moduleId);
+        if (existingLocation && existingLocation !== targetBay) {
+            removeModuleFromLocation(moduleId, existingLocation);
+        }
+    
+        // If there's already a module in the target bay, move it back to inventory
         if (targetBay.childNodes.length > 0) {
-            let existingModule = targetBay.childNodes[0].textContent.trim();
-            if (equippedModules.has(existingModule)) {
-                equippedModules.delete(existingModule);
+            let existingModuleId = targetBay.childNodes[0].getAttribute('data-id');
+            if (equippedModules.has(parseInt(existingModuleId))) {
+                equippedModules.delete(parseInt(existingModuleId));
             }
             targetBay.innerHTML = ''; // Clear the bay
-            updateInventoryDisplay();  // Update the inventory to show the returned module
         }
     
         // Add new module to the bay
-        const moduleObj = inventoryModules.find(obj => obj.name === moduleName);
+        const moduleObj = inventoryModules.find(obj => obj.id === moduleId);
         if (moduleObj) {
-            const moduleDiv = createModuleDiv(moduleName, moduleObj.stats, moduleObj.tier);
+            const moduleDiv = createModuleDiv(moduleObj.name, moduleObj.stats, moduleObj.tier, moduleObj.id);
+            moduleDiv.setAttribute('data-id', moduleObj.id.toString()); // Set module ID as a data attribute
             targetBay.appendChild(moduleDiv);
-            equippedModules.add(moduleName);
-            updateInventoryDisplay();  // Refresh the inventory display
-            updateShipStats();
+            equippedModules.add(moduleObj.id); // Track modules by ID
+            updateInventoryDisplay(); // Refresh the inventory display
+            updateShipStats(); // Update ship stats
         }
     }
     
     
-    
-    
-    function handleInventoryDrop(event) {
-        event.preventDefault();
-        const moduleName = event.dataTransfer.getData('text/plain').trim();
-    
-        // Move module back to inventory
-        if (equippedModules.has(moduleName)) {
+            // Function to find the current location of a module
+        function findModuleLocation(moduleId) {
+            let location = null;
             document.querySelectorAll('.module-bay').forEach(bay => {
                 bay.childNodes.forEach(child => {
-                    if (child.textContent.trim() === moduleName) {
-                        bay.removeChild(child);
+                    if (parseInt(child.getAttribute('data-id')) === moduleId) {
+                        location = bay;
                     }
                 });
             });
-    
-            equippedModules.delete(moduleName);
-            updateInventoryDisplay();
-            updateShipStats();
+            return location;
         }
-    }
+
+        // Function to remove a module from its current location
+        function removeModuleFromLocation(moduleId, location) {
+            location.childNodes.forEach(child => {
+                if (parseInt(child.getAttribute('data-id')) === moduleId) {
+                    location.removeChild(child);
+                }
+            });
+            equippedModules.delete(moduleId);
+        }
+    
+    
+        function handleInventoryDrop(event) {
+            event.preventDefault();
+            const moduleId = parseInt(event.dataTransfer.getData('text/plain').trim());
+        
+            // Find the module object by its ID
+            const moduleObj = inventoryModules.find(obj => obj.id === moduleId);
+        
+            // Check if the module is currently equipped
+            if (moduleObj && equippedModules.has(moduleObj.id)) {
+                // Remove the module from its current location
+                const moduleLocation = findModuleLocation(moduleId);
+                if (moduleLocation) {
+                    removeModuleFromLocation(moduleId, moduleLocation);
+                }
+        
+                // Update the equipped modules tracking and the display
+                equippedModules.delete(moduleObj.id);
+                updateInventoryDisplay();
+                updateShipStats();
+            }
+        }
+        
 
     function prettyText(text) {
         // Use regular expression to match lowercase letters followed by uppercase letters
