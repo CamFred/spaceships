@@ -29,26 +29,47 @@
 
 /* Module styles */
 .module {
-    background-color: #00bfff; /* Bright blue background */
-    color: #000; /* Black text color */
+    background-color: #000; /* Default module background color */
+    color: #00bfff; /* Text color */
+    position: relative; /* Needed for positioning the pseudo-element */
+}
+
+/* Common style for all tiers */
+.module-tier-1, .module-tier-2, .module-tier-3 {
+    border-left: 5px solid transparent; /* Default to transparent */
 }
 
 /* Tier 1 style */
-.module-tier-1 {
-    background-color: #5733FF; /* You can choose your preferred color */
-    /* Add other styling as needed */
+.module-tier-1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Width of the colored edge */
+    background-color: #5733FF; /* Color for Tier 1 */
 }
 
 /* Tier 2 style */
-.module-tier-2 {
-    background-color: #33FF57; /* Another color for Tier 2 */
-    /* Add other styling as needed */
+.module-tier-2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Width of the colored edge */
+    background-color: #33FF57; /* Color for Tier 2 */
 }
 
 /* Tier 3 style */
-.module-tier-3 {
-    background-color: #FF5733; /* Another color for Tier 3 */
-    /* Add other styling as needed */
+.module-tier-3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Width of the colored edge */
+    background-color: #FF5733; /* Color for Tier 3 */
 }
 
 /* Hover effect for module bays */
