@@ -1,8 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     let equippedModules = new Set(); // Track equipped modules
     let inventoryModules = []; // Global variable to hold all module objects
+    let defaultShipStats = {}; // To store default ship stats
+
     const inventory = document.getElementById('inventory');
     const moduleStats = document.getElementById('module-stats'); // The element to display module stats
+
+    // Fetch default ship stats from JSON
+    fetch('shipStats.json')
+        .then(response => response.json())
+        .then(data => {
+            // Convert array to object for easier manipulation
+            data.forEach(stat => {
+                defaultShipStats[stat.statName] = stat.defaultValue;
+            });
+            updateShipStats(); // Initialize ship stats display
+        })
+        .catch(error => console.error('Error fetching ship stats:', error));
 
     // Function to fetch modules and update the inventory display
     function fetchModulesAndUpdateDisplay() {
@@ -90,22 +104,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const shipStatsDiv = document.getElementById('ship-stats');
         shipStatsDiv.innerHTML = ''; // Clear previous ship stats
     
-        // Initialize an object to store ship stats
-        const shipStats = {};
+        // Copy default ship stats to a new object
+        const shipStats = {...defaultShipStats};
     
         // Iterate through equipped modules
         equippedModules.forEach(moduleId => {
             const moduleObj = inventoryModules.find(obj => obj.id === moduleId);
             if (moduleObj && moduleObj.stats) {
-                // Iterate through the stats of the module and add them to shipStats
                 for (const [statName, statValue] of Object.entries(moduleObj.stats)) {
-                    // Use the statName as the key and add the statValue to shipStats
                     if (shipStats.hasOwnProperty(statName)) {
-                        // If the stat already exists, add the new value
                         shipStats[statName] += statValue;
-                    } else {
-                        // If the stat doesn't exist, create it with the new value
-                        shipStats[statName] = statValue;
                     }
                 }
             }
@@ -122,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         shipStatsDiv.appendChild(shipStatsList);
     }
+    
     
 // Call the updateShipStats function initially to display ship stats
 updateShipStats();
