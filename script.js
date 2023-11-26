@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create and display inventory items
         inventoryModules.forEach(moduleObj => {
             if (!equippedModules.has(moduleObj.id)) { // Check using module ID
-                let div = createModuleDiv(moduleObj.name, moduleObj.stats, moduleObj.tier, moduleObj.id);
+                let div = createModuleDiv(moduleObj.name, moduleObj.stats, moduleObj.tier, moduleObj.id, "images/icons/" + moduleObj.icon);
                 div.addEventListener('dragstart', handleDragStart);
                 inventory.appendChild(div);
             }
@@ -49,18 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 
-    function createModuleDiv(moduleName, moduleStats, tier, id) {
+    function createModuleDiv(moduleName, moduleStats, tier, id, iconUrl) {
         let div = document.createElement('div');
         div.className = 'module';
-        div.textContent = moduleName;
         div.setAttribute('data-id', id); // Correctly set the module's ID
         div.draggable = true;
     
+        // Create icon div
+        let iconDiv = document.createElement('div');
+        iconDiv.className = 'module-icon';
+        // Set background image from the iconUrl argument
+        iconDiv.style.backgroundImage = `url('${iconUrl}')`;
+    
+        // Create text div
+        let textDiv = document.createElement('div');
+        textDiv.className = 'module-name';
+        textDiv.textContent = moduleName;
+    
+        // Append icon and text divs to the module div
+        div.appendChild(iconDiv);
+        div.appendChild(textDiv);
+    
         // Replace spaces with hyphens in the tier to create a valid class name
-        const tierClass = tier.replace(/\s+/g, '-').toLowerCase();``
+        const tierClass = tier.replace(/\s+/g, '-').toLowerCase();
         
         // Add a class based on the modified tier
-        //console.log("I am adding module-tier-" + tierClass);
         div.classList.add(`module-${tierClass}`);
     
         // Add click event listener to display module stats
@@ -70,6 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
         return div;
     }
+    
+    
     
 
     function displayModuleStats(moduleName, stats, tier) {
@@ -205,7 +220,7 @@ updateShipStats();
         // Add new module to the bay
         const moduleObj = inventoryModules.find(obj => obj.id === moduleId);
         if (moduleObj) {
-            const moduleDiv = createModuleDiv(moduleObj.name, moduleObj.stats, moduleObj.tier, moduleObj.id);
+            const moduleDiv = createModuleDiv(moduleObj.name, moduleObj.stats, moduleObj.tier, moduleObj.id, "images/icons/" + moduleObj.icon);
             moduleDiv.setAttribute('data-id', moduleObj.id.toString()); // Set module ID as a data attribute
             targetBay.appendChild(moduleDiv);
             equippedModules.add(moduleObj.id); // Track modules by ID

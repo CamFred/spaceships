@@ -88,7 +88,10 @@ body {
     transition: background-color 0.3s;
 }
 
+
 .module {
+    display: flex;
+    align-items: center;
     background-color: var(--background-dark);
     color: var(--text-color);
     position: relative;
@@ -100,6 +103,21 @@ body {
     transition: background-color 0.3s;
 }
 
+.module-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-size: cover;
+}
+
+
+.module-name {
+    /* Additional styling for the module name if needed */
+}
+
+
 .module-tier-1, .module-tier-2, .module-tier-3 {
     border-left: 5px solid transparent;
 }
@@ -110,7 +128,7 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 20px;
+    width: 5px;
 }
 
 .module-tier-1::before { background-color: #5733FF; }

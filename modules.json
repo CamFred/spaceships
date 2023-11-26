@@ -6,7 +6,8 @@
             "shieldStrength": 70,
             "energyConsumption": 25
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "bubble-field.png"
     },
     {
         "id": 2,        
@@ -15,7 +16,8 @@
             "shieldStrength": 100,
             "energyConsumption": 20
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "bubble-field.png"
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
             "shieldStrength": 140,
             "energyConsumption": 15
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "bubble-field.png"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
             "speedIncrease": 15,
             "fuelEfficiency": 10
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "rocket-thruster.png"
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
             "speedIncrease": 25,
             "fuelEfficiency": 15
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "rocket-thruster.png"
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@
             "speedIncrease": 35,
             "fuelEfficiency": 20
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "rocket-thruster.png"
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@
             "damageIncrease": 15,
             "reloadSpeed": 2.0
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "missile-pod.png"
     },
     {
         "id": 8,
@@ -69,7 +76,8 @@
             "damageIncrease": 20,
             "reloadSpeed": 1.75
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "missile-pod.png"
     },
     {
         "id": 9,
@@ -78,7 +86,8 @@
             "damageIncrease": 25,
             "reloadSpeed": 1.5
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "missile-pod.png"
     },
     {
         "id": 10,
@@ -87,7 +96,8 @@
             "additionalCapacity": 50,
             "cargoSecurity": 10
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "cargo-crate.png"
     },
     {
         "id": 11,
@@ -96,7 +106,9 @@
             "additionalCapacity": 70,
             "cargoSecurity": 15
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "cargo-crate.png"
+
     },
     {
         "id": 12,
@@ -105,7 +117,8 @@
             "additionalCapacity": 100,
             "cargoSecurity": 20
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "cargo-crate.png"
     },
     {
         "id": 13,
@@ -114,7 +127,8 @@
             "scanRange": 150,
             "scanAccuracy": 80
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "radar-sweep.png"
     },
     {
         "id": 14,
@@ -123,7 +137,8 @@
             "scanRange": 200,
             "scanAccuracy": 90
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "radar-sweep.png"
     },
     {
         "id": 15,
@@ -132,7 +147,8 @@
             "scanRange": 250,
             "scanAccuracy": 95
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "radar-sweep.png"
     },
     {
         "id": 16,
@@ -141,7 +157,8 @@
             "hullStrength": 80,
             "impactResistance": 20
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "metal-scales.png"
     },
     {
         "id": 17,
@@ -150,7 +167,8 @@
             "hullStrength": 120,
             "impactResistance": 30
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "metal-scales.png"
     },
     {
         "id": 18,
@@ -159,7 +177,8 @@
             "hullStrength": 160,
             "impactResistance": 40
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "metal-scales.png"
     },
     {
         "id": 19,
@@ -168,7 +187,8 @@
             "energyOutput": 80,
             "overheatLimit": 60
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "ball-glow.png"
     },
     {
         "id": 20,
@@ -177,7 +197,8 @@
             "energyOutput": 100,
             "overheatLimit": 75
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "ball-glow.png"
     },
     {
         "id": 21,
@@ -186,7 +207,8 @@
             "energyOutput": 120,
             "overheatLimit": 90
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "ball-glow.png"
     },
     {
         "id": 22,
@@ -195,7 +217,8 @@
             "stealthDuration": 40,
             "cooldown": 180
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "invisible.png"
     },
     {
         "id": 23,
@@ -204,7 +227,8 @@
             "stealthDuration": 60,
             "cooldown": 120
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "invisible.png"
     },
     {
         "id": 24,
@@ -213,7 +237,8 @@
             "stealthDuration": 80,
             "cooldown": 90
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "invisible.png"
     },
     {
         "id": 25,
@@ -222,7 +247,8 @@
             "repairRate": 3,
             "energyConsumption": 15
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "spanner.png"
     },
     {
         "id": 26,
@@ -231,7 +257,8 @@
             "repairRate": 5,
             "energyConsumption": 10
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "spanner.png"
     },
     {
         "id": 27,
@@ -240,7 +267,8 @@
             "repairRate": 8,
             "energyConsumption": 5
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "spanner.png"
     },
     {
         "id": 28,
@@ -249,7 +277,8 @@
             "oxygenEfficiency": 60,
             "systemRedundancy": 1
         },
-        "tier": "Tier 1"
+        "tier": "Tier 1",
+        "icon": "life-bar.png"
     },
     {
         "id": 29,
@@ -258,7 +287,8 @@
             "oxygenEfficiency": 80,
             "systemRedundancy": 2
         },
-        "tier": "Tier 2"
+        "tier": "Tier 2",
+        "icon": "life-bar.png"
     },
     {
         "id": 30,
@@ -267,6 +297,7 @@
             "oxygenEfficiency": 100,
             "systemRedundancy": 3
         },
-        "tier": "Tier 3"
+        "tier": "Tier 3",
+        "icon": "life-bar.png"
     }
 ]
