@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Shield Generator Module",
+        "name": "Shield Generator",
         "stats": {
             "shieldStrength": 70,
             "energyConsumption": 25
@@ -10,7 +10,7 @@
     },
     {
         "id": 2,        
-        "name": "Shield Generator Module",
+        "name": "Shield Generator",
         "stats": {
             "shieldStrength": 100,
             "energyConsumption": 20
@@ -19,7 +19,7 @@
     },
     {
         "id": 3,
-        "name": "Shield Generator Module",
+        "name": "Shield Generator",
         "stats": {
             "shieldStrength": 140,
             "energyConsumption": 15
@@ -28,7 +28,7 @@
     },
     {
         "id": 4,
-        "name": "Engine Booster Module",
+        "name": "Engine Booster",
         "stats": {
             "speedIncrease": 15,
             "fuelEfficiency": 10
@@ -37,7 +37,7 @@
     },
     {
         "id": 5,
-        "name": "Engine Booster Module",
+        "name": "Engine Booster",
         "stats": {
             "speedIncrease": 25,
             "fuelEfficiency": 15
@@ -46,7 +46,7 @@
     },
     {
         "id": 6,
-        "name": "Engine Booster Module",
+        "name": "Engine Booster",
         "stats": {
             "speedIncrease": 35,
             "fuelEfficiency": 20
@@ -55,7 +55,7 @@
     },
     {
         "id": 7,
-        "name": "Weapon Upgrade Module",
+        "name": "Weapon Upgrade",
         "stats": {
             "damageIncrease": 15,
             "reloadSpeed": 2.0
@@ -64,7 +64,7 @@
     },
     {
         "id": 8,
-        "name": "Weapon Upgrade Module",
+        "name": "Weapon Upgrade",
         "stats": {
             "damageIncrease": 20,
             "reloadSpeed": 1.75
@@ -73,7 +73,7 @@
     },
     {
         "id": 9,
-        "name": "Weapon Upgrade Module",
+        "name": "Weapon Upgrade",
         "stats": {
             "damageIncrease": 25,
             "reloadSpeed": 1.5
@@ -82,7 +82,7 @@
     },
     {
         "id": 10,
-        "name": "Cargo Expansion Module",
+        "name": "Cargo Expansion",
         "stats": {
             "additionalCapacity": 50,
             "cargoSecurity": 10
@@ -91,7 +91,7 @@
     },
     {
         "id": 11,
-        "name": "Cargo Expansion Module",
+        "name": "Cargo Expansion",
         "stats": {
             "additionalCapacity": 70,
             "cargoSecurity": 15
@@ -100,7 +100,7 @@
     },
     {
         "id": 12,
-        "name": "Cargo Expansion Module",
+        "name": "Cargo Expansion",
         "stats": {
             "additionalCapacity": 100,
             "cargoSecurity": 20
@@ -109,7 +109,7 @@
     },
     {
         "id": 13,
-        "name": "Long-Range Scanner Module",
+        "name": "Long-Range Scanner",
         "stats": {
             "scanRange": 150,
             "scanAccuracy": 80
@@ -118,7 +118,7 @@
     },
     {
         "id": 14,
-        "name": "Long-Range Scanner Module",
+        "name": "Long-Range Scanner",
         "stats": {
             "scanRange": 200,
             "scanAccuracy": 90
@@ -127,7 +127,7 @@
     },
     {
         "id": 15,
-        "name": "Long-Range Scanner Module",
+        "name": "Long-Range Scanner",
         "stats": {
             "scanRange": 250,
             "scanAccuracy": 95
@@ -136,7 +136,7 @@
     },
     {
         "id": 16,
-        "name": "Hull Reinforcement Module",
+        "name": "Hull Reinforcement",
         "stats": {
             "hullStrength": 80,
             "impactResistance": 20
@@ -145,7 +145,7 @@
     },
     {
         "id": 17,
-        "name": "Hull Reinforcement Module",
+        "name": "Hull Reinforcement",
         "stats": {
             "hullStrength": 120,
             "impactResistance": 30
@@ -154,7 +154,7 @@
     },
     {
         "id": 18,
-        "name": "Hull Reinforcement Module",
+        "name": "Hull Reinforcement",
         "stats": {
             "hullStrength": 160,
             "impactResistance": 40
@@ -163,7 +163,7 @@
     },
     {
         "id": 19,
-        "name": "Energy Core Module",
+        "name": "Energy Core",
         "stats": {
             "energyOutput": 80,
             "overheatLimit": 60
@@ -172,7 +172,7 @@
     },
     {
         "id": 20,
-        "name": "Energy Core Module",
+        "name": "Energy Core",
         "stats": {
             "energyOutput": 100,
             "overheatLimit": 75
@@ -181,7 +181,7 @@
     },
     {
         "id": 21,
-        "name": "Energy Core Module",
+        "name": "Energy Core",
         "stats": {
             "energyOutput": 120,
             "overheatLimit": 90
@@ -190,7 +190,7 @@
     },
     {
         "id": 22,
-        "name": "Stealth Technology Module",
+        "name": "Stealth Technology",
         "stats": {
             "stealthDuration": 40,
             "cooldown": 180
@@ -199,7 +199,7 @@
     },
     {
         "id": 23,
-        "name": "Stealth Technology Module",
+        "name": "Stealth Technology",
         "stats": {
             "stealthDuration": 60,
             "cooldown": 120
@@ -208,7 +208,7 @@
     },
     {
         "id": 24,
-        "name": "Stealth Technology Module",
+        "name": "Stealth Technology",
         "stats": {
             "stealthDuration": 80,
             "cooldown": 90
@@ -217,7 +217,7 @@
     },
     {
         "id": 25,
-        "name": "Automated Repair Module",
+        "name": "Automated Repair",
         "stats": {
             "repairRate": 3,
             "energyConsumption": 15
@@ -226,7 +226,7 @@
     },
     {
         "id": 26,
-        "name": "Automated Repair Module",
+        "name": "Automated Repair",
         "stats": {
             "repairRate": 5,
             "energyConsumption": 10
@@ -235,7 +235,7 @@
     },
     {
         "id": 27,
-        "name": "Automated Repair Module",
+        "name": "Automated Repair",
         "stats": {
             "repairRate": 8,
             "energyConsumption": 5
@@ -244,7 +244,7 @@
     },
     {
         "id": 28,
-        "name": "Life Support Upgrade Module",
+        "name": "Life Support Upgrade",
         "stats": {
             "oxygenEfficiency": 60,
             "systemRedundancy": 1
@@ -253,7 +253,7 @@
     },
     {
         "id": 29,
-        "name": "Life Support Upgrade Module",
+        "name": "Life Support Upgrade",
         "stats": {
             "oxygenEfficiency": 80,
             "systemRedundancy": 2
@@ -262,7 +262,7 @@
     },
     {
         "id": 30,
-        "name": "Life Support Upgrade Module",
+        "name": "Life Support Upgrade",
         "stats": {
             "oxygenEfficiency": 100,
             "systemRedundancy": 3

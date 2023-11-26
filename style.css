@@ -45,7 +45,7 @@ body {
 
 /* Custom scrollbar styles for inventory, ship, and ship-stats */
 #inventory::-webkit-scrollbar, #ship::-webkit-scrollbar, #ship-stats::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 18px; /* Width of the scrollbar */
 }
 
 #inventory::-webkit-scrollbar-track, #ship::-webkit-scrollbar-track, #ship-stats::-webkit-scrollbar-track {
