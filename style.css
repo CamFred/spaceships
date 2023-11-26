@@ -1,12 +1,15 @@
+
 body {
     background-color: #000; /* Base dark color */
     background-image: 
+        url('images/Space Background.png'), /* Path to the background image */
         radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.6), transparent 60%), 
         radial-gradient(circle at 80% 80%, rgba(191, 0, 255, 0.6), transparent 60%);
-    background-size: cover; /* Cover the entire viewport */
+    /* background-size: cover; */ /* Cover the entire viewport */
     background-attachment: fixed; /* Fix background to the viewport */
     color: #fff; /* Text color for readability */
-    font-family: 'Arial', sans-serif; /* Sci-fi themed font, change as needed */
+    font-family: 'Press Start 2P', cursive; /* Pixel art font */
+    font-size: 10px; /* Adjust font size as needed */
 }
 
 
@@ -160,7 +163,6 @@ body {
 
 /* Style for module stats text */
 #module-stats div {
-    font-family: 'Arial Narrow', sans-serif;
     white-space: pre-line; /* Preserve line breaks in stats text */
     font-size: 1.1em; /* Slightly larger font size for stats text */
 }
@@ -182,8 +184,7 @@ body {
 .stat-item {
     display: flex;
     align-items: center;
-    font-family: 'Arial Narrow', sans-serif;
-    font-size: 1.1em;
+    font-size: .8em;
     margin-bottom: 10px;
 }
 
