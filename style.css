@@ -1,3 +1,17 @@
+body {
+    background-color: #000; /* Base dark color */
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.6), transparent 60%), 
+        radial-gradient(circle at 80% 80%, rgba(191, 0, 255, 0.6), transparent 60%);
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed; /* Fix background to the viewport */
+    color: #fff; /* Text color for readability */
+    font-family: 'Arial', sans-serif; /* Sci-fi themed font, change as needed */
+}
+
+
+
+
 /* Container styles */
 #inventory, #ship {
     border: 2px solid #00bfff; /* Bright blue border */
@@ -12,27 +26,27 @@
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
-/* Custom scrollbar styles */
-#inventory::-webkit-scrollbar {
+/* Custom scrollbar styles for both inventory and ship */
+#inventory::-webkit-scrollbar, #ship::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */
 }
 
-#inventory::-webkit-scrollbar-track {
+#inventory::-webkit-scrollbar-track, #ship::-webkit-scrollbar-track {
     background-color: #222; /* Dark background for the track */
     border-radius: 6px; /* Rounded corners for the track */
 }
 
-#inventory::-webkit-scrollbar-thumb {
+#inventory::-webkit-scrollbar-thumb, #ship::-webkit-scrollbar-thumb {
     background-color: #00bfff; /* Bright blue color for the thumb */
     border-radius: 6px; /* Rounded corners for the thumb */
     border: 3px solid #000; /* Dark border for contrast */
 }
 
-#inventory::-webkit-scrollbar-thumb:hover {
+#inventory::-webkit-scrollbar-thumb:hover, #ship::-webkit-scrollbar-thumb:hover {
     background-color: #009fdd; /* Slightly different color on hover */
 }
 
-#inventory::-webkit-scrollbar-button {
+#inventory::-webkit-scrollbar-button, #ship::-webkit-scrollbar-button {
     display: none; /* Optionally hide scrollbar buttons */
 }
 
