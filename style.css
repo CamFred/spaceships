@@ -1,6 +1,7 @@
 /* CSS Variables */
 :root {
     --text-color: #00bfff;
+    --header-color: #000000;
     --background-dark: #000;
     --border-glow: #00bfff;
     --module-border: 2px solid #fff;
@@ -46,16 +47,33 @@ body {
 
 /* Modules and Stats */
 #inventory, #ship, #ship-stats, #module-stats {
-    border: var(--module-border);
-    padding: 15px;
+    background-color: var(--background-dark); /* Section background color */
+    border: 2px solid var(--border-glow); /* Border to match the theme */
+    border-top: none; /* Remove top border to blend with the tab */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+    padding: 20px; /* Padding inside the section */
     margin: 0px;
     width: 320px;
-    background-color: var(--background-dark);
     color: var(--text-color);
-    border-radius: 10px;
     max-height: 400px;
     overflow-y: auto;
 }
+
+/* H2 Header Styles for Sci-Fi Theme */
+h2 {
+    color: var(--header-color); /* Defined text color */
+    font-family: 'Press Start 2P', cursive; /* Consistent font with the theme */
+    text-transform: uppercase; /* Uppercase for a bold look */
+    letter-spacing: 2px; /* Spacing for a more digital look */
+    padding: 10px 20px; /* Padding around the text */
+    background-color: var(--border-glow); /* Semi-transparent background */
+    box-shadow: 0 2px 5px var(--background-dark); /* Subtle shadow for depth */
+    border-radius: 10px 10px 0 0; /* Rounded top corners */
+    margin: 0; /* Remove default margin */
+    display: inline-block; /* Fit to content */
+    width: calc(100% - 40px); /* Full width considering padding */
+}
+
 
 /* Scrollbar Styles */
 #inventory::-webkit-scrollbar, #ship::-webkit-scrollbar, #ship-stats::-webkit-scrollbar {
@@ -145,11 +163,11 @@ body {
 .module.draggable { cursor: grab; }
 
 /* Stats Display Styles */
-#module-stats, #ship-stats {
+#module-stats {
     border: 2px solid var(--text-color);
     padding: 15px;
     margin: 0px;
-    width: 350px;
+    width: 320px;
     background-color: var(--background-dark);
     color: var(--text-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
