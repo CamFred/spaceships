@@ -8,6 +8,32 @@
     background-color: #000; /* Dark background color */
     color: #00bfff; /* Bright blue text color */
     border-radius: 10px; /* Rounded corners */
+    max-height: 400px; /* Maximum height before scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Custom scrollbar styles */
+#inventory::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+#inventory::-webkit-scrollbar-track {
+    background-color: #222; /* Dark background for the track */
+    border-radius: 6px; /* Rounded corners for the track */
+}
+
+#inventory::-webkit-scrollbar-thumb {
+    background-color: #00bfff; /* Bright blue color for the thumb */
+    border-radius: 6px; /* Rounded corners for the thumb */
+    border: 3px solid #000; /* Dark border for contrast */
+}
+
+#inventory::-webkit-scrollbar-thumb:hover {
+    background-color: #009fdd; /* Slightly different color on hover */
+}
+
+#inventory::-webkit-scrollbar-button {
+    display: none; /* Optionally hide scrollbar buttons */
 }
 
 /* Module bay and module styles */
@@ -138,21 +164,44 @@
     border-radius: 10px; /* Rounded corners */
 }
 
-/* Heading style for ship stats */
-#ship-stats h3 {
-    font-size: 1.5em; /* Larger font size for ship stats heading */
-    margin-bottom: 15px;
-}
-
-/* Style for ship stats list */
-#ship-stats ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-}
-
 /* Style for ship stats list items */
-#ship-stats li {
+.stat-item {
+    display: flex;
+    align-items: center;
     font-family: 'Arial Narrow', sans-serif;
-    font-size: 1.1em; /* Slightly larger font size for ship stats text */
-    margin-bottom: 5px;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Label for each stat */
+.stat-label {
+    margin-right: 10px;
+    color: #00bfff;
+    white-space: nowrap;
+    min-width: 150px; /* Set a minimum width for uniformity */
+}
+
+/* Container for the progress bar */
+.progress-bar-container {
+    flex-grow: 1; /* Allows the container to grow and fill available space */
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+/* Progress bar itself */
+.progress-bar {
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 4px;
+    color: white;
+    line-height: 20px;
+    text-align: right;
+}
+
+/* Span for the numeric value */
+.stat-value {
+    color: #00bfff;
+    white-space: nowrap;
 }

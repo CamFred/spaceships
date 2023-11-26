@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let equippedModules = new Set(); // Track equipped modules
     let inventoryModules = []; // Global variable to hold all module objects
     let defaultShipStats = {}; // To store default ship stats
+    let maxShipStats = {}; // To store maximum ship stats values
+
 
     const inventory = document.getElementById('inventory');
     const moduleStats = document.getElementById('module-stats'); // The element to display module stats
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Convert array to object for easier manipulation
             data.forEach(stat => {
                 defaultShipStats[stat.statName] = stat.defaultValue;
+                maxShipStats[stat.statName] = stat.maxValue; // Store max values
             });
             updateShipStats(); // Initialize ship stats display
         })
@@ -119,17 +122,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     
-        // Create a list of ship stats and their values
-        const shipStatsList = document.createElement('ul');
+        // Create a list of ship stats, progress bars, and their values
         for (const [statName, statValue] of Object.entries(shipStats)) {
-            const listItem = document.createElement('li');
-            const formattedStatName = prettyText(statName);
-            listItem.textContent = `${formattedStatName}: ${statValue}`;
-            shipStatsList.appendChild(listItem);
-        }
+            const statItem = document.createElement('div');
+            statItem.className = 'stat-item';
     
-        shipStatsDiv.appendChild(shipStatsList);
+            const statLabel = document.createElement('span');
+            statLabel.className = 'stat-label';
+            statLabel.textContent = prettyText(statName) + ":";
+    
+            const progressBarContainer = document.createElement('div');
+            progressBarContainer.className = 'progress-bar-container';
+    
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            progressBar.style.width = `${(statValue / maxShipStats[statName]) * 100}%`;
+    
+            progressBarContainer.appendChild(progressBar);
+    
+            const statValueLabel = document.createElement('span');
+            statValueLabel.className = 'stat-value';
+            statValueLabel.textContent = ` ${statValue}`;
+    
+            statItem.appendChild(statLabel);
+            statItem.appendChild(progressBarContainer);
+            statItem.appendChild(statValueLabel);
+            shipStatsDiv.appendChild(statItem);
+        }
     }
+    
     
     
 // Call the updateShipStats function initially to display ship stats
