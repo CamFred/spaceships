@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     function displayModuleStats(moduleName, stats, tier) {
+        console.log("Displaying stats for:", moduleName); // Debugging log
+        console.log(stats); // Debugging log
+
         // Clear previous module stats
         moduleStats.innerHTML = '';
     
@@ -83,44 +86,43 @@ document.addEventListener('DOMContentLoaded', function() {
         moduleStats.appendChild(statsDiv);
     }
     
-    // Function to update the ship's stats based on equipped modules
-function updateShipStats() {
-    const shipStatsDiv = document.getElementById('ship-stats');
-    shipStatsDiv.innerHTML = ''; // Clear previous ship stats
-
-    // Initialize an object to store ship stats
-    const shipStats = {};
-
-    // Iterate through equipped modules
-    equippedModules.forEach(moduleName => {
-        const moduleObj = inventoryModules.find(obj => obj.name === moduleName);
-        if (moduleObj && moduleObj.stats) {
-            // Iterate through the stats of the module and add them to shipStats
-            for (const [statName, statValue] of Object.entries(moduleObj.stats)) {
-                // Use the statName as the key and add the statValue to shipStats
-                if (shipStats.hasOwnProperty(statName)) {
-                    // If the stat already exists, add the new value
-                    shipStats[statName] += statValue;
-                } else {
-                    // If the stat doesn't exist, create it with the new value
-                    shipStats[statName] = statValue;
+    function updateShipStats() {
+        const shipStatsDiv = document.getElementById('ship-stats');
+        shipStatsDiv.innerHTML = ''; // Clear previous ship stats
+    
+        // Initialize an object to store ship stats
+        const shipStats = {};
+    
+        // Iterate through equipped modules
+        equippedModules.forEach(moduleId => {
+            const moduleObj = inventoryModules.find(obj => obj.id === moduleId);
+            if (moduleObj && moduleObj.stats) {
+                // Iterate through the stats of the module and add them to shipStats
+                for (const [statName, statValue] of Object.entries(moduleObj.stats)) {
+                    // Use the statName as the key and add the statValue to shipStats
+                    if (shipStats.hasOwnProperty(statName)) {
+                        // If the stat already exists, add the new value
+                        shipStats[statName] += statValue;
+                    } else {
+                        // If the stat doesn't exist, create it with the new value
+                        shipStats[statName] = statValue;
+                    }
                 }
             }
+        });
+    
+        // Create a list of ship stats and their values
+        const shipStatsList = document.createElement('ul');
+        for (const [statName, statValue] of Object.entries(shipStats)) {
+            const listItem = document.createElement('li');
+            const formattedStatName = prettyText(statName);
+            listItem.textContent = `${formattedStatName}: ${statValue}`;
+            shipStatsList.appendChild(listItem);
         }
-    });
-
-    // Create a list of ship stats and their values
-    const shipStatsList = document.createElement('ul');
-    for (const [statName, statValue] of Object.entries(shipStats)) {
-        const listItem = document.createElement('li');
-        const formattedStatName = prettyText(statName);
-        listItem.textContent = `${formattedStatName}: ${statValue}`;
-        shipStatsList.appendChild(listItem);
+    
+        shipStatsDiv.appendChild(shipStatsList);
     }
-
-    shipStatsDiv.appendChild(shipStatsList);
-}
-
+    
 // Call the updateShipStats function initially to display ship stats
 updateShipStats();
 
