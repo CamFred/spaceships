@@ -1,198 +1,152 @@
-
-body {
-    background-color: #000; /* Base dark color */
-    background-image: 
-        url('images/spacestation.png'), /* Path to the background image */
-        radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.6), transparent 60%), 
-        radial-gradient(circle at 80% 80%, rgba(191, 0, 255, 0.6), transparent 60%);
-    /* background-size: cover; */ /* Cover the entire viewport */
-    background-attachment: fixed; /* Fix background to the viewport */
-    color: #fff; /* Text color for readability */
-    font-family: 'Press Start 2P', cursive; /* Pixel art font */
-    font-size: 10px; /* Adjust font size as needed */
+/* CSS Variables */
+:root {
+    --text-color: #00bfff;
+    --background-dark: #000;
+    --border-glow: #00bfff;
+    --module-border: 2px solid #fff;
+    --scrollbar-thumb: #00bfff;
+    --scrollbar-track: #222;
+    --scrollbar-thumb-hover: #009fdd;
+    --module-bg: #333;
+    --module-bg-hover: #444;
+    --empty-module-bg: #666;
+    --filled-module-bg: #00ff00;
+    --dragging-opacity: 0.8;
 }
 
+/* Base Styles */
+body {
+    background-color: var(--background-dark);
+    background-image: url('images/spacestation.png'), 
+                      radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.6), transparent 60%), 
+                      radial-gradient(circle at 80% 80%, rgba(191, 0, 255, 0.6), transparent 60%);
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
 
+/* Layout */
 #content-area {
-    background-color: #000; /* Dark background for sci-fi theme */
-    color: #00bfff; /* Bright, neon-like text color */
+    background-color: var(--background-dark);
+    color: var(--text-color);
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    border: 3px solid #00bfff; /* Neon-like border */
-    box-shadow: 0 0 15px #00bfff; /* Glowing effect */
+    border: 3px solid var(--border-glow);
+    box-shadow: 0 0 15px var(--border-glow);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px; /* Add some padding */
-    border-radius: 10px; /* Optional: Rounded corners for a sleek look */
+    padding: 20px;
+    border-radius: 10px;
 }
 
-
-/* Container styles */
+/* Modules and Stats */
 #inventory, #ship, #ship-stats, #module-stats {
-    border: 2px solid #00bfff; /* Bright blue border */
+    border: var(--module-border);
     padding: 15px;
     margin: 0px;
     width: 320px;
-    float: none;
-    background-color: #000; /* Dark background color */
-    color: #00bfff; /* Bright blue text color */
-    border-radius: 10px; /* Rounded corners */
-    max-height: 400px; /* Maximum height before scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-/* Custom scrollbar styles for inventory, ship, and ship-stats */
+/* Scrollbar Styles */
 #inventory::-webkit-scrollbar, #ship::-webkit-scrollbar, #ship-stats::-webkit-scrollbar {
-    width: 18px; /* Width of the scrollbar */
+    width: 18px;
 }
 
 #inventory::-webkit-scrollbar-track, #ship::-webkit-scrollbar-track, #ship-stats::-webkit-scrollbar-track {
-    background-color: #222; /* Dark background for the track */
-    border-radius: 6px; /* Rounded corners for the track */
+    background-color: var(--scrollbar-track);
+    border-radius: 6px;
 }
 
 #inventory::-webkit-scrollbar-thumb, #ship::-webkit-scrollbar-thumb, #ship-stats::-webkit-scrollbar-thumb {
-    background-color: #00bfff; /* Bright blue color for the thumb */
-    border-radius: 6px; /* Rounded corners for the thumb */
-    border: 3px solid #000; /* Dark border for contrast */
+    background-color: var(--scrollbar-thumb);
+    border-radius: 6px;
+    border: 3px solid var(--background-dark);
 }
 
 #inventory::-webkit-scrollbar-thumb:hover, #ship::-webkit-scrollbar-thumb:hover, #ship-stats::-webkit-scrollbar-thumb:hover {
-    background-color: #009fdd; /* Slightly different color on hover */
+    background-color: var(--scrollbar-thumb-hover);
 }
 
-#inventory::-webkit-scrollbar-button, #ship::-webkit-scrollbar-button, #ship-stats::-webkit-scrollbar-button {
-    display: none; /* Optionally hide scrollbar buttons */
-}
-
-/* Module bay and module styles */
-.module-bay, .module {
-    border: 2px solid #fff; /* White border */
+/* Module Bay and Module Styles */
+.module-bay {
+    background-color: var(--module-bg);
+    min-height: 50px;
+    border: var(--module-border);
     margin: 4px;
     padding: 15px;
+    border-radius: 10px;
     text-align: center;
-    cursor: pointer; /* Indicate it's draggable */
-    transition: background-color 0.3s; /* Add smooth transition for background color */
-    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Module bay styles */
-.module-bay {
-    background-color: #333; /* Dark gray background */
-    min-height: 50px; /* Ensures the bay is visible even when empty */
-}
-
-/* Module styles */
 .module {
-    background-color: #000; /* Default module background color */
-    color: #00bfff; /* Text color */
-    position: relative; /* Needed for positioning the pseudo-element */
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    position: relative;
+    border: var(--module-border);
+    margin: 4px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* Common style for all tiers */
 .module-tier-1, .module-tier-2, .module-tier-3 {
-    border-left: 5px solid transparent; /* Default to transparent */
+    border-left: 5px solid transparent;
 }
 
-/* Tier 1 style */
-.module-tier-1::before {
+.module-tier-1::before, .module-tier-2::before, .module-tier-3::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 20px; /* Width of the colored edge */
-    background-color: #5733FF; /* Color for Tier 1 */
+    width: 20px;
 }
 
-/* Tier 2 style */
-.module-tier-2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 20px; /* Width of the colored edge */
-    background-color: #33FF57; /* Color for Tier 2 */
-}
+.module-tier-1::before { background-color: #5733FF; }
+.module-tier-2::before { background-color: #33FF57; }
+.module-tier-3::before { background-color: #FF5733; }
 
-/* Tier 3 style */
-.module-tier-3::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 20px; /* Width of the colored edge */
-    background-color: #FF5733; /* Color for Tier 3 */
-}
+.module-bay:hover { background-color: var(--module-bg-hover); }
+.module-bay.empty { background-color: var(--empty-module-bg); border-style: dashed; }
+.module-bay.filled { background-color: var(--filled-module-bg); }
 
-/* Hover effect for module bays */
-.module-bay:hover {
-    background-color: #444; /* Slightly darker gray on hover */
-}
+.module:active, .module:focus { opacity: var(--dragging-opacity); border-color: #888; }
+.module.draggable { cursor: grab; }
 
-/* Style for an empty module bay */
-.module-bay.empty {
-    background-color: #666; /* Gray with dashed border for empty bays */
-    border-style: dashed;
-}
-
-/* Style for a filled module bay */
-.module-bay.filled {
-    background-color: #00ff00; /* Bright green for filled bays */
-}
-
-/* Styles for modules being dragged */
-.module:active, .module:focus {
-    opacity: 0.8;
-    border-color: #888; /* Darker border when module is active */
-}
-
-/* Additional style for draggable modules */
-.module.draggable {
-    cursor: grab;
-}
-
-/* Module stats display styles */
-#module-stats {
-    border: 2px solid #00bfff; /* Bright blue border for stats display */
+/* Stats Display Styles */
+#module-stats, #ship-stats {
+    border: 2px solid var(--text-color);
     padding: 15px;
     margin: 0px;
     width: 350px;
-    background-color: #000; /* Dark background color for stats display */
-    color: #00bfff; /* Bright blue text color for stats display */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-    border-radius: 10px; /* Rounded corners */
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 
-/* Heading style for module name */
-#module-stats h3 {
-    font-size: 1.5em; /* Larger font size for module name */
+#module-stats h3, #ship-stats h3 {
+    font-size: 1.5em;
     margin-bottom: 15px;
 }
 
-/* Style for module stats text */
-#module-stats div {
-    white-space: pre-line; /* Preserve line breaks in stats text */
-    font-size: 1.1em; /* Slightly larger font size for stats text */
+#module-stats div, #ship-stats div {
+    white-space: pre-line;
+    font-size: 1.1em;
 }
 
-/* Ship stats display styles */
-#ship-stats {
-    border: 2px solid #00bfff; /* Bright blue border for ship stats display */
-    padding: 15px;
-    margin: 0px;
-    width: 350px;
-    background-color: #000; /* Dark background color for ship stats display */
-    color: #00bfff; /* Bright blue text color for ship stats display */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Style for ship stats list items */
+/* Stat Items Styles */
 .stat-item {
     display: flex;
     align-items: center;
@@ -200,24 +154,21 @@ body {
     margin-bottom: 10px;
 }
 
-/* Label for each stat */
 .stat-label {
     margin-right: 10px;
-    color: #00bfff;
+    color: var(--text-color);
     white-space: nowrap;
-    min-width: 150px; /* Set a minimum width for uniformity */
+    min-width: 150px;
 }
 
-/* Container for the progress bar */
 .progress-bar-container {
-    flex-grow: 1; /* Allows the container to grow and fill available space */
+    flex-grow: 1;
     background-color: #ddd;
     border-radius: 4px;
     overflow: hidden;
     margin-right: 10px;
 }
 
-/* Progress bar itself */
 .progress-bar {
     height: 20px;
     background-color: #4CAF50;
@@ -227,8 +178,7 @@ body {
     text-align: right;
 }
 
-/* Span for the numeric value */
 .stat-value {
-    color: #00bfff;
+    color: var(--text-color);
     white-space: nowrap;
 }
