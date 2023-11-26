@@ -2,7 +2,7 @@
 body {
     background-color: #000; /* Base dark color */
     background-image: 
-        url('images/Space Background.png'), /* Path to the background image */
+        url('images/spacestation.png'), /* Path to the background image */
         radial-gradient(circle at 20% 20%, rgba(0, 191, 255, 0.6), transparent 60%), 
         radial-gradient(circle at 80% 80%, rgba(191, 0, 255, 0.6), transparent 60%);
     /* background-size: cover; */ /* Cover the entire viewport */
@@ -13,15 +13,29 @@ body {
 }
 
 
+#content-area {
+    background-color: #000; /* Dark background for sci-fi theme */
+    color: #00bfff; /* Bright, neon-like text color */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 3px solid #00bfff; /* Neon-like border */
+    box-shadow: 0 0 15px #00bfff; /* Glowing effect */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px; /* Add some padding */
+    border-radius: 10px; /* Optional: Rounded corners for a sleek look */
+}
 
 
 /* Container styles */
-#inventory, #ship {
+#inventory, #ship, #ship-stats, #module-stats {
     border: 2px solid #00bfff; /* Bright blue border */
     padding: 15px;
-    margin: 15px;
-    width: 350px;
-    float: left;
+    margin: 0px;
+    width: 320px;
+    float: none;
     background-color: #000; /* Dark background color */
     color: #00bfff; /* Bright blue text color */
     border-radius: 10px; /* Rounded corners */
@@ -29,34 +43,34 @@ body {
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
-/* Custom scrollbar styles for both inventory and ship */
-#inventory::-webkit-scrollbar, #ship::-webkit-scrollbar {
+/* Custom scrollbar styles for inventory, ship, and ship-stats */
+#inventory::-webkit-scrollbar, #ship::-webkit-scrollbar, #ship-stats::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */
 }
 
-#inventory::-webkit-scrollbar-track, #ship::-webkit-scrollbar-track {
+#inventory::-webkit-scrollbar-track, #ship::-webkit-scrollbar-track, #ship-stats::-webkit-scrollbar-track {
     background-color: #222; /* Dark background for the track */
     border-radius: 6px; /* Rounded corners for the track */
 }
 
-#inventory::-webkit-scrollbar-thumb, #ship::-webkit-scrollbar-thumb {
+#inventory::-webkit-scrollbar-thumb, #ship::-webkit-scrollbar-thumb, #ship-stats::-webkit-scrollbar-thumb {
     background-color: #00bfff; /* Bright blue color for the thumb */
     border-radius: 6px; /* Rounded corners for the thumb */
     border: 3px solid #000; /* Dark border for contrast */
 }
 
-#inventory::-webkit-scrollbar-thumb:hover, #ship::-webkit-scrollbar-thumb:hover {
+#inventory::-webkit-scrollbar-thumb:hover, #ship::-webkit-scrollbar-thumb:hover, #ship-stats::-webkit-scrollbar-thumb:hover {
     background-color: #009fdd; /* Slightly different color on hover */
 }
 
-#inventory::-webkit-scrollbar-button, #ship::-webkit-scrollbar-button {
+#inventory::-webkit-scrollbar-button, #ship::-webkit-scrollbar-button, #ship-stats::-webkit-scrollbar-button {
     display: none; /* Optionally hide scrollbar buttons */
 }
 
 /* Module bay and module styles */
 .module-bay, .module {
     border: 2px solid #fff; /* White border */
-    margin: 10px;
+    margin: 4px;
     padding: 15px;
     text-align: center;
     cursor: pointer; /* Indicate it's draggable */
@@ -146,9 +160,8 @@ body {
 #module-stats {
     border: 2px solid #00bfff; /* Bright blue border for stats display */
     padding: 15px;
-    margin: 15px;
+    margin: 0px;
     width: 350px;
-    float: left;
     background-color: #000; /* Dark background color for stats display */
     color: #00bfff; /* Bright blue text color for stats display */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
@@ -171,9 +184,8 @@ body {
 #ship-stats {
     border: 2px solid #00bfff; /* Bright blue border for ship stats display */
     padding: 15px;
-    margin: 15px;
+    margin: 0px;
     width: 350px;
-    float: left;
     background-color: #000; /* Dark background color for ship stats display */
     color: #00bfff; /* Bright blue text color for ship stats display */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
