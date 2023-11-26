@@ -153,7 +153,6 @@ updateShipStats();
     function handleModuleBayDrop(event) {
         event.preventDefault();
         const moduleName = event.dataTransfer.getData('text/plain').trim();
-        console.log("Received: " + moduleName);
         let targetBay = event.target;
     
         // Ensure the drop target is the module bay itself
@@ -161,64 +160,46 @@ updateShipStats();
             targetBay = targetBay.parentNode;
         }
     
-        // Check if a module is already equipped in the bay
+        // If there's already a module in the bay, move it back to inventory
         if (targetBay.childNodes.length > 0) {
-            let existingModule = targetBay.childNodes[0];
-            equippedModules.delete(existingModule.textContent.trim());
-            targetBay.removeChild(existingModule);
+            let existingModule = targetBay.childNodes[0].textContent.trim();
+            if (equippedModules.has(existingModule)) {
+                equippedModules.delete(existingModule);
+            }
+            targetBay.innerHTML = ''; // Clear the bay
+            updateInventoryDisplay();  // Update the inventory to show the returned module
         }
     
-        // Find the module object from the inventoryModules array
+        // Add new module to the bay
         const moduleObj = inventoryModules.find(obj => obj.name === moduleName);
-    
         if (moduleObj) {
-            // Create a new module element for the bay
-            const moduleDiv = document.createElement('div');
-            moduleDiv.className = 'module';
-            moduleDiv.textContent = moduleName;
-            moduleDiv.draggable = true;
-    
-            // Add the module tier class to the bay module
-            const tierClass = moduleObj.tier.replace(/\s+/g, '-').toLowerCase();
-            moduleDiv.classList.add(`module-${tierClass}`);
-    
-            // Add click event listener to display module stats
-            moduleDiv.addEventListener('click', () => {
-                displayModuleStats(moduleName, moduleObj.stats, moduleObj.tier);
-            });
-    
-            // Append the new module element to the bay
+            const moduleDiv = createModuleDiv(moduleName, moduleObj.stats, moduleObj.tier);
             targetBay.appendChild(moduleDiv);
-    
-            // Add the new module to the set of equipped modules
-            equippedModules.add(moduleName); // Use module name for tracking
-    
-            // Re-fetch modules and update the inventory display
-            fetchModulesAndUpdateDisplay();
-    
-            // Update the ship's stats
+            equippedModules.add(moduleName);
+            updateInventoryDisplay();  // Refresh the inventory display
             updateShipStats();
         }
     }
     
     
     
+    
     function handleInventoryDrop(event) {
         event.preventDefault();
         const moduleName = event.dataTransfer.getData('text/plain').trim();
-        const sourceId = event.dataTransfer.getData('sourceId');
     
-        if (sourceId && sourceId !== 'inventory') {
+        // Move module back to inventory
+        if (equippedModules.has(moduleName)) {
+            document.querySelectorAll('.module-bay').forEach(bay => {
+                bay.childNodes.forEach(child => {
+                    if (child.textContent.trim() === moduleName) {
+                        bay.removeChild(child);
+                    }
+                });
+            });
+    
             equippedModules.delete(moduleName);
-            let sourceElement = document.getElementById(sourceId);
-            if (sourceElement) {
-                sourceElement.innerHTML = '';
-            }
-
-            // Re-fetch modules and update the inventory display
-            fetchModulesAndUpdateDisplay();
-
-           // Update the ship's stats
+            updateInventoryDisplay();
             updateShipStats();
         }
     }
